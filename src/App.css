@@ -37,3 +37,22 @@
   }
 }
 
+.centered-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.centered-table {
+  margin: 0 auto;
+}
+.custom-button {
+  background-color: #238636;
+  color: #fff;
+}
+
+.custom-button:hover {
+  background-color: #1f7a54;
+}
+
