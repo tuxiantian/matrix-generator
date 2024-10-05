@@ -62,16 +62,19 @@ function App() {
                 <th>记录 ID</th>
                 <th>准则</th>
                 <th>备选方案</th>
+                <th>最佳选择</th>
                 <th>创建时间</th>
                 <th>操作</th>
               </tr>
             </thead>
             <tbody>
-              {history.map((record, index) => (
-                <tr key={index}>
+              {history.map((record, index) => {
+                const responseData = JSON.parse(record.response_data);
+                return ( <tr key={index}>
                   <td>{record.id}</td>
                   <td>{record.criteria_names}</td>
                   <td>{record.alternative_names}</td>
+                  <td>{responseData.best_choice_name}</td>
                   <td>{new Date(record.created_at).toLocaleString('zh-CN', {
                     year: 'numeric',
                     month: '2-digit',
@@ -85,8 +88,9 @@ function App() {
                     <button className="custom-button" onClick={() => handleDetailsClick(record)}>详情</button>
                     <button className="custom-button" onClick={() => handleDelete(record.id)}>删除</button>
                   </td>
-                </tr>
-              ))}
+                </tr>);
+
+              })}
             </tbody>
           </table>
         </div>
