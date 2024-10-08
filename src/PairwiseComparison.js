@@ -176,7 +176,21 @@ function PairwiseComparison({ data, onBack }) {
       ))}
       <br></br>
       <button className="custom-button" onClick={generateMatrices}>Generate Matrices</button>
-
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+      {'矩阵表格输入提示'}
+      <div style={{ maxWidth: '600px', textAlign: 'center' }}>
+        <pre>
+          在每个层次中，将元素进行两两比较，构建成对比较矩阵。比较的依据是元素相对重要性的判断，通常使用1到9的标度表示。常见的标度如下：
+          <br />
+          - 1：两者同等重要<br />
+          - 3：一方稍微重要<br />
+          - 5：一方显著重要<br />
+          - 7：一方非常重要<br />
+          - 9：一方极其重要<br />
+          - 2, 4, 6, 8：上述判断的中间值
+        </pre>
+        </div>
+      </div>
       {criteriaNames.length > 0 && (
         <>
         <div  className="centered-table-container">

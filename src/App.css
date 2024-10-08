@@ -50,6 +50,8 @@
 .custom-button {
   background-color: #238636;
   color: #fff;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .custom-button:hover {
